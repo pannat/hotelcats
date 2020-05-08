@@ -1,0 +1,15 @@
+block variables
+
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title #{title}
+        meta(name="description", content=description)
+        block head
+
+    body(class=pageClass)
+        include ../header/header
+        main
+            block content
+        include ../footer/footer
