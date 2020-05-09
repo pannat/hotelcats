@@ -1,8 +1,23 @@
+html
+  box-sizing border-box
+
+*,
+*::before,
+*::after
+  -webkit-box-sizing inherit
+
 body
   min-width 320px
   margin 0
   padding 0
   background-color var(--body-background-color)
+
+input,
+textarea,
+select,
+button
+  font inherit
+
 
 .visually-hidden
   position absolute
@@ -15,3 +30,9 @@ body
 
   clip rect(0 0 0 0)
   overflow hidden
+
+.button
+  display inline-block
+
+.button__text
+    position relative

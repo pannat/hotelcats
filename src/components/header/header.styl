@@ -1,12 +1,33 @@
-.header .site-nav
+.header
+  &--menu-open
+    background-color var(--main-yellow)
+
+.header__nav
   display none
+  width 100%
+  +min-breakpoint(medium)
+    display block
+
+.header--menu-open .header__nav
+    display block
 
 .header__wrapper
   min-height 62px
   padding: 0 15px
   display flex
+  flex-wrap wrap
   justify-content space-between
   align-items center
 
-#burger:checked + .site-nav
-  display block
+.header__burger
+  width 62px
+  height 62px
+  background-color transparent
+  background-image url("./img/burger.svg")
+  background-repeat no-repeat
+  background-position 50%
+  border none
+  outline none
+
+.header--menu-open .header__burger
+    background-image url("./img/close.svg")

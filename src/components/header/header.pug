@@ -4,10 +4,7 @@ header.header
             div.header__logo.logo
                 a.logo__link
                     img(src=require("../../img/logo.svg").default width="46" height="38").logo__img
+            button.header__burger
             nav.header__nav
-                label(for="burger").header__burger
-                    img(src=require("../../img/burger.svg").default)
-                    span.visually-hidden Открыть меню
-                input(type="checkbox" id="burger").visually-hidden
                 include ../site-nav/site-nav
 
