@@ -1,0 +1,8 @@
+- var socialItems = [{id: 0, title: "Facebook", link: "www.facebook.com", icon: 'fb.svg'}, {id: 1, title: "Instagram", link: "www.instagram.com", icon: 'ig.svg'}, {id: 2, title: "Вконтакте", link: "www.vk.com", icon: 'vk.svg'}]
+
+ul.socials
+    each val in socialItems
+        li.socials__item
+            a(href=val.url)
+                span.visually-hidden=val.title
+                img(src=require("../../img/" + val.icon).default)
