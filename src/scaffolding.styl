@@ -10,7 +10,7 @@ body
   min-width 320px
   margin 0
   padding 0
-  background-color var(--body-background-color)
+  background-color var(--main-white)
   font-family "Lato", "Rubik", sans-serif
   font-size 15px
   line-height 18px
@@ -24,6 +24,9 @@ a
   font inherit
   text-decoration none
 
+.container
+  max-width 1170px
+  margin 0 auto
 
 .visually-hidden
   position absolute
@@ -39,6 +42,19 @@ a
 
 .button
   display inline-block
+  font-size 16px
+  line-height 19px
+  font-weight 600
+  padding 18px 63px 20px 30px
+  border none
+  box-shadow 0 5px 25px rgba(26, 33, 47, 0.1)
+  border-radius 25px
+  color var(--main-white)
+  background-color var(--orange)
+
+.button--invert
+  color var(--main-text-color)
+  background-color var(--main-white)
 
 .button__text
     position relative

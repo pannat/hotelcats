@@ -70,6 +70,17 @@ module.exports = {
                         }
                     }
                 ],
+            },
+            {
+                test: /\.(woff|woff2)$/,
+                use: [
+                    {
+                        loader:'url-loader',
+                        options: {
+                            name: 'img/[name].[ext]',
+                        }
+                    }
+                ],
             }
         ]
     }

@@ -2,23 +2,34 @@
   &--menu-open
     background-color var(--main-yellow)
 
+.header__logo img
+  width 46px
+  height 38px
+  +min-breakpoint(medium)
+    width 63px
+    height 52px
+
 .header__nav
   display none
   width 100%
   padding-bottom 188px
   +min-breakpoint(medium)
     display block
+    width auto
+    padding 0
 
 .header--menu-open .header__nav
     display block
 
 .header__wrapper
   min-height 62px
-  padding: 0 15px
   display flex
   flex-wrap wrap
   justify-content space-between
   align-items center
+  padding: 0 15px
+  +min-breakpoint(medium)
+    padding 12px 45px
 
 .header__burger
   width 62px
@@ -29,9 +40,15 @@
   background-position 50%
   border none
   outline none
+  +min-breakpoint(medium)
+    display none
 
 .header--menu-open .header__burger
     background-image url("./img/close.svg")
+
+.header__contacts
+  +min-breakpoint(medium)
+    display none
 
 .header__phone
   margin 12.5px 0 25px 0
