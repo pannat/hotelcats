@@ -21,8 +21,12 @@ textarea,
 select,
 button,
 a
+  transition-property color, background-color
+  transition-duration .4s
   font inherit
   text-decoration none
+  color inherit
+
 
 .container
   max-width 1170px
@@ -41,20 +45,59 @@ a
   overflow hidden
 
 .button
+  transition-property color, background-color
+  transition-duration .4s
+  position relative
   display inline-block
   font-size 16px
   line-height 19px
   font-weight 600
-  padding 18px 63px 20px 30px
+  padding 15px 63px 16px 30px
   border none
   box-shadow 0 5px 25px rgba(26, 33, 47, 0.1)
   border-radius 25px
   color var(--main-white)
   background-color var(--orange)
-
-.button--invert
-  color var(--main-text-color)
-  background-color var(--main-white)
+  &:hover,
+  &:focus
+    background-color var(--orange)
+    color var(--main-white)
+  &--invert
+    color var(--main-text-color)
+    background-color var(--main-white)
+    &:hover,
+    &:focus
+      background-color var(--orange)
+      color var(--main-white)
 
 .button__text
     position relative
+
+.button__icon
+  transition-property color, background-color
+  transition-duration .4s
+  position absolute
+  top 50%
+  margin-top -18px
+  right 7px
+  display inline-flex
+  justify-content center
+  align-items center
+  width 36px
+  height 36px
+  border-radius 50%
+  color var(--orange)
+  background-color var(--main-white)
+  &--invert
+    background-color var(--orange)
+    color var(--main-white)
+
+.button:hover .button__icon,
+.button:focus .button__icon
+    background-color var(--orange)
+    color var(--main-white)
+.button:hover .button__icon--invert,
+.button:focus .button__icon--invert
+    color var(--orange)
+    background-color var(--main-white)
+

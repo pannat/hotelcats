@@ -44,10 +44,7 @@ module.exports = {
                 test: /\.styl$/,
                 use: [
                         {
-                            loader: MiniCssExtractPlugin.loader,
-                            options: {
-                                publicPath: '/dist'
-                            }
+                            loader: MiniCssExtractPlugin.loader
                         },
                         {
                             loader: "css-loader"
@@ -61,12 +58,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpg|svg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader:'url-loader',
+                        loader:'file-loader',
                         options: {
-                            name: 'img/[name].[ext]',
+                            name: 'img/[name].[ext]'
                         }
                     }
                 ],
@@ -75,12 +72,21 @@ module.exports = {
                 test: /\.(woff|woff2)$/,
                 use: [
                     {
-                        loader:'url-loader',
+                        loader:'file-loader',
                         options: {
-                            name: 'img/[name].[ext]',
+                            name: 'fonts/[name].[ext]',
                         }
                     }
                 ],
+            },
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
             }
         ]
     }

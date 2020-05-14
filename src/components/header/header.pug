@@ -1,16 +1,15 @@
 header.header
-    div.container
-        div.header__wrapper
-            div.header__logo
-                a
-                    img(src=require("../../img/logo.svg").default).logo__img
-            button.header__burger
-            nav.header__nav
-                include ../site-nav/site-nav
-                div.header__contacts
-                   p.header__phone
-                        a(href="tel:88003335599") 8 (800) 333-55-99
-                   include ../socials/socials
-        include ../promo/promo
+    div.header__wrapper.container
+        div.header__logo
+            a
+                img(src=require("../../img/logo.svg").default).logo__img
+        button.header__burger
+        nav.header__nav
+            include ../site-nav/site-nav
+            div.header__contacts
+               p.header__phone
+                    a(href="tel:88003335599") 8 (800) 333-55-99
+               include ../socials/socials
+    include ../promo/promo
 
 

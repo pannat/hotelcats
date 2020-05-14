@@ -1,24 +1,44 @@
 .promo
-  padding 50px 22px 230px 22px
-  background-color var(--light-orange)
+  padding 45px 22px 231px 22px
   text-align center
+  background-repeat no-repeat
+  background-position 0 bottom
+  background-image url("./img/promo-bg-mobile.png")
+  background-size cover
+  +min-breakpoint(medium)
+    padding-top 135px
+    padding-bottom 530px
+    background-image url("./img/promo-bg-tablet.png")
+  +min-breakpoint(large)
+    text-align left
+    padding-top 147px
+    padding-bottom 147px
+    background-image url("./img/promo-bg.png")
 
 .promo__location
   margin 0
   font-size 12px
   line-height 14px
-  margin-bottom 12px
+  +min-breakpoint(medium)
+    font-size 14px
+    line-height 17px
 
 .promo__title
-  margin 0 0 22px 0
+  margin 0 0 11px 0
   font-family "Rubik"
   font-size 44px
   line-height 52px
   font-weight 700
+  +min-breakpoint(medium)
+    font-size 62px
+    line-height 73px
 
 .promo__description
-  margin 0 0 40px 0
+  margin 0 0 35px 0
   font-weight 500
   font-size 16px
   line-height 19px
+  +min-breakpoint(medium)
+    font-size 20px
+    line-height 24px
 
