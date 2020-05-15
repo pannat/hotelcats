@@ -1,0 +1,49 @@
+- var features = [
+- {
+-   id: 0,
+-   title: "Комфортная температура",
+-   description: "Во всех номерах<br class=separator /> поддерживается комфортная температура в пределах 23 - 25 градусов. В каждом номере можно дополнительно<br class=separator--tablet /> отрегулировать температуру.",
+-   icon: "thermometer"
+- },
+- {
+-   id: 1,
+-   title: "Видеонаблюдение",
+-   description: "Мы предоставляем доступ в нашу систему. Вы сможете следить<br class=separator /> за своим питомцем со своего смартфона или компьютера.",
+-   icon: "video"
+- },
+- {
+-   id: 2,
+-   title: "Услуги Зоотакси",
+-   description: "Мы приедем за вашим питомцем в любой район Санкт-Петербурга.",
+-   icon: "taxi"
+- },
+- {
+-   id: 3,
+-   title: "Сбалансированное питание",
+-   description: "Вы можете привезти свой корм или доверить рацион своего питомца нашим профессионалам.",
+-   icon: "food"
+- },
+- {
+-   id: 4,
+-   title: "Ежедневные прогулки",
+-   description: "По вашему желанию мы выгуливаем вашего питомца два раза в день на специализированной закрытой территории.",
+-   icon: "walk"
+- },
+- {
+-   id: 5,
+-   title: "Лучшие ветеринары",
+-   description: "В гостинице 24 часа дежурит ветеринарный врач, который окажет любую помощь в случае необходимости.",
+-   icon: "top-doctors"
+- }
+-]
+
+section.features
+    div.container
+        h2.features__title Почему мы?
+        ul.features__list
+            each item in features
+                li.features__item
+                    div.features__icon-wrapper
+                        img.features__icon(src=require("../../img/" + item.icon + ".svg").default)
+                    h3.features__name=item.title
+                    p.features__description !{item.description}

@@ -41,7 +41,7 @@ module.exports = {
                 loader: 'pug-loader'
             },
             {
-                test: /\.styl$/,
+                test: /\.(styl|css)$/,
                 use: [
                         {
                             loader: MiniCssExtractPlugin.loader
