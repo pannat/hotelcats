@@ -6,9 +6,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 const PATH = {
-    src: path.resolve(__dirname, 'src')
+    src: path.resolve(__dirname, 'src'),
 }
-const PAGES = fs.readdirSync(PATH.src).filter(fileName => fileName.endsWith('.pug'))
+const PAGES = fs.readdirSync(PATH.src + "/pages").filter(fileName => fileName.endsWith('.pug'))
 
 module.exports = {
     entry: './main.js',
@@ -25,7 +25,7 @@ module.exports = {
     },
     plugins: [
         ...PAGES.map(page => new HTMLWebpackPlugin({
-            template: `${PATH.src}/${page}`,
+            template: `${PATH.src}/pages/${page}`,
             filename: `./${page.replace(/\.pug/,'.html')}`
         })),
         new CleanWebpackPlugin(),

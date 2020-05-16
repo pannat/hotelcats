@@ -1,16 +1,16 @@
 .features
   padding-top 65px
   padding-bottom 70px
+  +min-breakpoint(medium)
+    padding-top 120px
+  +min-breakpoint(large)
+    padding-top 137px
 
 .features__title
-  margin 0 0 35px 0
-  text-align center
-  font-family "Rubik"
-  font-weight 600
-  font-size 28px
-  line-height 33px
+  heading2lvl()
 
 .features__list
+  position relative
   reset-list()
   +min-breakpoint(medium)
     display grid
@@ -18,6 +18,25 @@
     grid-gap 30px
   +min-breakpoint(large)
     grid-template-columns auto auto auto
+  &::before
+    content ""
+    position absolute
+    top -94px
+    right -63px
+    background-image url("./img/paw-bg.svg")
+    background-repeat no-repeat
+    width 150px
+    height 136px
+    background-size 100% auto
+    background-position 50%
+    +min-breakpoint(medium)
+      top -235px
+      right -160px
+      width 370px
+      height 370px
+    +min-breakpoint(large)
+      background-size initial
+      right -165px
 
 .features__item
   position relative
