@@ -1,7 +1,10 @@
+include ../button-mixin
+
 div.promo
     div.container
+
         p.promo__location Санкт-Петербург
         h1.promo__title Котейка
         h2.promo__description Уютная гостиница для котов и кошек
-        include ../button/button
+        +button('#', true)
 

@@ -1,3 +1,5 @@
+include ../button-mixin
+
 - var roomsPush = [
 -   {
 -    id: 0,
@@ -18,17 +20,26 @@
 -    features: [{title: "Площадь", measure: "1.56 м2"}, {title: "Размеры (ШхГхВ)", measure: "125х125х180"}, {title: "Цена за сутки", measure: "350₽"}]
 -   }
 - ]
+- var countRoom = roomsPush.length;
 
 section.rooms-push
     div.container
         h2.rooms-push__title Номера
-        ul.rooms-push__list
-            each room in roomsPush
-                li.rooms-push__item
-                    p.rooms-push__photo
-                        img(src=require("../../img/" + room.photo).default)
-                    h3.rooms-push__name=room.title
-                    ul.rooms-push__features
-                        each feature in room.features
-                            li.rooms-push__feature=feature.title + " - " + feature.measure
-                    include ../button/button
+        div.rooms-push__slider.slider
+            ul.rooms-push__list.slider__wrapper
+                each room in roomsPush
+                    li.rooms-push__item
+                        p.rooms-push__photo
+                            img(src=require("../img/" + room.photo).default)
+                        div.rooms-push__description
+                            h3.rooms-push__name=room.title
+                            ul.rooms-push__features
+                                each feature in room.features
+                                    li.rooms-push__feature=feature.title + " - " + feature.measure
+                        +button('#', false)
+        form.slider__controls
+            - var i = 0
+            while i < countRoom
+                input.visually-hidden.slider__input(type="radio" id=i + "room" checked=i === 0 name="room")
+                label.slider__control(for=i + "room")
+                - i++
