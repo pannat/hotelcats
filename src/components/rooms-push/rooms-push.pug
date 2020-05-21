@@ -4,39 +4,40 @@ include ../button-mixin
 -   {
 -    id: 0,
 -    title: "Эконом плюс",
--    photo: "economy-room.png",
+-    photo: "economy-room",
 -    features: [{title: "Площадь", measure: "0,90 м2"}, {title: "Размеры (ШхГхВ)", measure: "90х100х180"}, {title: "Цена за сутки", measure: "200₽"}]
 -   },
 -   {
 -    id: 1,
 -    title: "Комфорт",
--    photo: "comfort-room.png",
+-    photo: "comfort-room",
 -    features: [{title: "Площадь", measure: "1,13 м2"}, {title: "Размеры (ШхГхВ)", measure: "100х125х180"}, {title: "Цена за сутки", measure: "250₽"}]
 -   },
 -   {
 -    id: 2,
 -    title: "Сьют",
--    photo: "suite-room.png",
+-    photo: "suite-room",
 -    features: [{title: "Площадь", measure: "1.56 м2"}, {title: "Размеры (ШхГхВ)", measure: "125х125х180"}, {title: "Цена за сутки", measure: "350₽"}]
 -   }
 - ]
 - var countRoom = roomsPush.length;
 
 section.rooms-push
-    div.container
+    div.rooms-push__wrapper
         h2.rooms-push__title Номера
         div.rooms-push__slider.slider
             ul.rooms-push__list.slider__wrapper
                 each room in roomsPush
                     li.rooms-push__item
-                        p.rooms-push__photo
-                            img(src=require("../img/" + room.photo).default)
-                        div.rooms-push__description
-                            h3.rooms-push__name=room.title
-                            ul.rooms-push__features
-                                each feature in room.features
-                                    li.rooms-push__feature=feature.title + " - " + feature.measure
-                        +button('#', false)
+                        div.rooms-push__item-wrap
+                            p.rooms-push__photo
+                                img(srcset=(" 320w " + require("../img/" + room.photo + "-320.png").default + ", " + require("../img/" + room.photo + "-768.png").default + " 768w, " + require("../img/" + room.photo + "-1100.png").default) + " 1100w")
+                            div.rooms-push__description
+                                h3.rooms-push__name=room.title
+                                ul.rooms-push__features
+                                    each feature in room.features
+                                        li.rooms-push__feature=feature.title + " - " + feature.measure
+                                +button('#', false)
         form.slider__controls
             - var i = 0
             while i < countRoom

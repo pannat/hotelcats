@@ -3,11 +3,6 @@
 
 .rooms-push__list
   reset-list()
-  text-align left
-
-.rooms-push__slider
-  box-shadow 0 0 25px rgba(208, 208, 208, 0.25)
-  border-radius 0 0 8px 8px
 
 .rooms-push__features
   reset-list()
@@ -15,16 +10,38 @@
 
 .rooms-push__title
   heading2lvl()
+  margin-bottom 10px
 
 .rooms-push__item
+  display flex
+
+.rooms-push__item-wrap
   display flex
   flex-direction column
   align-items center
   padding-bottom 25px
+  margin 25px 15px 25px
+  box-shadow 0 0 25px rgba(208, 208, 208, 0.25)
+  border-radius 0 0 8px 8px
+  +min-breakpoint(medium)
+    width 100%
+    position relative
+    padding 30px 0 30px 333px
+    box-shadow none
+
+.rooms-push__item .button
+  margin-top 20px
 
 .rooms-push__description
   padding 15px 25px 0
   margin-bottom auto
+  +min-breakpoint(medium)
+    padding 40px
+    position relative
+    background-color white
+    z-index 10
+    box-shadow 0 0 25px rgba(208, 208, 208, 0.25)
+    border-radius 8px
 
 .rooms-push__name
   margin 0 0 15px 0
@@ -37,6 +54,12 @@
   width 100%
   border-radius 8px 8px 0 0
   margin 0
+  +min-breakpoint(medium)
+    width 445px
+    position absolute
+    top 0
+    bottom 0
+    left 0
 
 .rooms-push__feature
   position relative
@@ -44,11 +67,22 @@
   padding-left 19px
   &::before
     position absolute
-    top 50%
+    top 9px
     left 1px
-    margin-top -6px
     content ''
     width 11px
     height 11px
     border-radius 50%
     background-color var(--main-yellow)
+
+.rooms-push__wrapper
+  position relative
+  &::before
+    position absolute
+    top 40px
+    left 0
+    content ''
+    width 150px
+    height 46px
+    background-image url('./img/fish.svg')
+    background-size 100% auto
