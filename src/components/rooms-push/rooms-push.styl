@@ -11,23 +11,34 @@
 .rooms-push__title
   heading2lvl()
   margin-bottom 10px
+  +min-breakpoint(medium)
+    margin-bottom 50px
+  +min-breakpoint(large)
+    margin-bottom 60px
 
 .rooms-push__item
   display flex
+  width 100%
 
 .rooms-push__item-wrap
   display flex
   flex-direction column
   align-items center
+  width 290px
+  margin 20px auto 30px
   padding-bottom 25px
-  margin 25px 15px 25px
   box-shadow 0 0 25px rgba(208, 208, 208, 0.25)
   border-radius 0 0 8px 8px
   +min-breakpoint(medium)
-    width 100%
+    width 678px
     position relative
     padding 30px 0 30px 333px
+    margin-bottom 50px
     box-shadow none
+  +min-breakpoint(large)
+    width 1030px
+    margin-bottom 55px
+    padding 60px 0 60px 333px
 
 .rooms-push__item .button
   margin-top 20px
@@ -42,6 +53,8 @@
     z-index 10
     box-shadow 0 0 25px rgba(208, 208, 208, 0.25)
     border-radius 8px
+  +min-breakpoint(large)
+    padding 40px 117px 40px 100px
 
 .rooms-push__name
   margin 0 0 15px 0
@@ -49,17 +62,27 @@
   font-weight 500
   font-size 20px
   line-height 24px
+  +min-breakpoint(large)
+    font-size 22px
+    line-height 26px
+    margin 0 0 20px 0
 
 .rooms-push__photo
   width 100%
   border-radius 8px 8px 0 0
   margin 0
   +min-breakpoint(medium)
-    width 445px
+    width 442px
+    height 326px
     position absolute
     top 0
     bottom 0
     left 0
+    img
+      height 100%
+  +min-breakpoint(large)
+    width 600px
+    height 404px
 
 .rooms-push__feature
   position relative
@@ -77,12 +100,24 @@
 
 .rooms-push__wrapper
   position relative
+  overflow hidden
   &::before
     position absolute
-    top 40px
-    left 0
+    top 33px
+    left 50%
     content ''
     width 150px
     height 46px
     background-image url('./img/fish.svg')
     background-size 100% auto
+    margin-left -165px
+    +min-breakpoint(medium)
+      top 49px
+      width 339px
+      height 106px
+      margin-left -390px
+    +min-breakpoint(medium)
+      top 27px
+      width 484px
+      height 151px
+      margin-left -682px

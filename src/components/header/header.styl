@@ -22,11 +22,16 @@
     display block
 
 .header__wrapper
-  min-height 62px
   display flex
   flex-wrap wrap
   justify-content space-between
   align-items center
+  padding 0 15px
+  +min-breakpoint(medium)
+    padding 12px 45px
+  +min-breakpoint(large)
+    max-width 1170px
+    margin 0 auto
 
 .header__burger
   width 62px
