@@ -9,7 +9,7 @@ const mySwipe = new Swipe(document.querySelector('.rooms-push__slider'), {
     stopPropagation: false,
     ignore: ".scroller",
     callback: function(index) {
-        document.getElementById(`${index}` + "room").checked = true;
+        document.getElementById(`${index}room`).checked = true;
     }
 });
 
