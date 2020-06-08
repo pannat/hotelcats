@@ -125,6 +125,14 @@ img
   overflow hidden
 
 .slider__controls
+  +min-breakpoint(large)
+    display flex
+    align-items center
+    max-width 1030px
+    margin 0 auto
+    padding 25px 0
+
+.slider__dots
   display flex
   justify-content space-between
   width 60px
@@ -142,4 +150,34 @@ img
 
 .slider__input:checked + .slider__control
   background-color var(--main-yellow)
+
+.slider__button
+  display none
+  +min-breakpoint(large)
+    position relative
+    display block
+    width 36px
+    height 36px
+    padding 0
+    color var(--orange)
+    box-shadow 0 2px 12px rgba(173, 152, 143, 0.25)
+  &::after
+    content ''
+    position absolute
+    top 50%
+    left 50%
+    margin-top -4px
+    margin-left -5px
+    width 8px
+    height 8px
+    border 2px solid currentColor
+    border-top-color transparent
+    border-right-color transparent
+  &--prev
+    margin-right 10px
+  &--next::after
+    transform rotate(-135deg)
+  &--prev::after
+    margin-left -2px
+    transform rotate(45deg)
 

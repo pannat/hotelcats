@@ -19,6 +19,10 @@
 .rooms-push__item
   display flex
   width 100%
+  +min-breakpoint(medium)
+    white-space nowrap
+  +min-breakpoint(large)
+    font-size 16px
 
 .rooms-push__item-wrap
   display flex
@@ -37,8 +41,8 @@
     box-shadow none
   +min-breakpoint(large)
     width 1030px
-    margin-bottom 55px
-    padding 60px 0 60px 333px
+    margin-bottom 30px
+    padding 60px 0 60px 530px
 
 .rooms-push__item .button
   margin-top 20px
@@ -47,6 +51,7 @@
   padding 15px 25px 0
   margin-bottom auto
   +min-breakpoint(medium)
+    margin-bottom 0
     padding 40px
     position relative
     background-color white
@@ -73,7 +78,7 @@
   margin 0
   +min-breakpoint(medium)
     width 442px
-    height 326px
+    height 100%
     position absolute
     top 0
     bottom 0
@@ -82,12 +87,13 @@
       height 100%
   +min-breakpoint(large)
     width 600px
-    height 404px
 
 .rooms-push__feature
   position relative
   line-height 27px
   padding-left 19px
+  +min-breakpoint(large)
+    padding-left 21px
   &::before
     position absolute
     top 9px
@@ -97,6 +103,9 @@
     height 11px
     border-radius 50%
     background-color var(--main-yellow)
+    +min-breakpoint(large)
+      width 13px
+      height 13px
 
 .rooms-push__wrapper
   position relative

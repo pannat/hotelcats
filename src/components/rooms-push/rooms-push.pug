@@ -5,19 +5,19 @@ include ../button-mixin
 -    id: 0,
 -    title: "Эконом плюс",
 -    photo: "economy-room",
--    features: [{title: "Площадь", measure: "0,90 м2"}, {title: "Размеры (ШхГхВ)", measure: "90х100х180"}, {title: "Цена за сутки", measure: "200₽"}]
+-    features: [{title: "Площадь", measure: "0,90 м2"}, {title: "Размеры (ШхГхВ)", measure: "90х100х180 см"}, {title: "Цена за сутки", measure: "200₽"}]
 -   },
 -   {
 -    id: 1,
 -    title: "Комфорт",
 -    photo: "comfort-room",
--    features: [{title: "Площадь", measure: "1,13 м2"}, {title: "Размеры (ШхГхВ)", measure: "100х125х180"}, {title: "Цена за сутки", measure: "250₽"}]
+-    features: [{title: "Площадь", measure: "1,13 м2"}, {title: "Размеры (ШхГхВ)", measure: "100х125х180 см"}, {title: "Цена за сутки", measure: "250₽"}]
 -   },
 -   {
 -    id: 2,
 -    title: "Сьют",
 -    photo: "suite-room",
--    features: [{title: "Площадь", measure: "1.56 м2"}, {title: "Размеры (ШхГхВ)", measure: "125х125х180"}, {title: "Цена за сутки", measure: "350₽"}]
+-    features: [{title: "Площадь", measure: "1.56 м2"}, {title: "Размеры (ШхГхВ)", measure: "125х125х180 см"}, {title: "Цена за сутки", measure: "350₽"}]
 -   }
 - ]
 - var countRoom = roomsPush.length;
@@ -36,11 +36,14 @@ section.rooms-push
                                 h3.rooms-push__name=room.title
                                 ul.rooms-push__features
                                     each feature in room.features
-                                        li.rooms-push__feature=feature.title + " - " + feature.measure
+                                        li.rooms-push__feature !{feature.title + " &mdash; " + feature.measure}
                                 +button('#', false)
-        form.slider__controls
-            - var i = 0
-            while i < countRoom
-                input.visually-hidden.slider__input(type="radio" id=i + "room" checked=i === 0 name="room")
-                label.slider__control(for=i + "room")
-                - i++
+        div.slider__controls
+            form.slider__dots
+                - var i = 0
+                while i < countRoom
+                    input.visually-hidden.slider__input(type="radio" id=i + "room" checked=i === 0 name="room")
+                    label.slider__control(for=i + "room")
+                    - i++
+            button.button.button--invert.slider__button.slider__button--prev
+            button.button.button--invert.slider__button.slider__button--next
