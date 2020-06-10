@@ -1,4 +1,7 @@
-extends ../components/main-layuot/main-layout
+extends ../components/main-layout/main-layout
+
+block append head
+    link(rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css")
 
 block variables
     - var title = 'Котейка';
@@ -8,3 +11,4 @@ block variables
 block content
     include ../components/features/features
     include ../components/rooms-push/rooms-push
+    include ../components/reviews/reviews

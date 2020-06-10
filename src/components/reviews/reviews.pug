@@ -1,0 +1,41 @@
+- var reviews = [
+-   {
+-       id: 0,
+-       datetime: '2019-11-15',
+-       date: '15 ноября, 2019',
+-       message: 'Первый раз пришлось оставить нашего котика в гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И мы и котик остались очень довольны!',
+-       author: 'Валерия Гришаева'
+-   },
+-   {
+-       id: 1,
+-       datetime: '2019-10-10',
+-       date: '10 октября, 2019',
+-       message: 'Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют здесь своего кота, когда уезжают. В “Котейке” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую! Будем обращаться еще.',
+-       author: 'Валерия Гришаева'
+-   },
+-   {
+-       id: 2,
+-       datetime: '2019-08-02',
+-       date: '2 августа, 2019',
+-       message: 'Мой кот — настоящая привереда, угодить ему сложно. У меня были особые требования к уходу за ним, и “Котейка” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это очень удобно.',
+-       author: 'Павел Нечаев'
+-   }
+- ]
+- var countReviews = reviews.length;
+
+section.reviews
+    div.reviews__wrapper
+        h2.reviews__title Отзывы
+        div.reviews__slider.swiper-container
+            ul.reviews__list.swiper-wrapper
+                each review in reviews
+                    li.reviews__item.swiper-slide
+                        blockquote
+                            p=review.message
+                            footer.reviews__meta
+                                cite=review.author
+                                time(datetime=review.datetime)=review.date
+        div.slider__controls
+            div.swiper-pagination
+            button.button.button--invert.slider__button.slider__button--prev.js-button-prev-review
+            button.button.button--invert.slider__button.slider__button--next.js-button-next-review

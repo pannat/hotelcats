@@ -1,8 +1,8 @@
 import Swipe from 'swipejs';
 
-const controls = document.querySelector('.slider__dots');
-const nextButton = document.querySelector('.slider__button--next');
-const prevButton = document.querySelector('.slider__button--prev');
+const controls = document.querySelector('.js-dots-rooms');
+const nextButton = document.querySelector('.js-button-next-rooms');
+const prevButton = document.querySelector('.js-button-prev-rooms');
 
 const mySwipe = new Swipe(document.querySelector('.rooms-push__slider'), {
     startSlide: 0,

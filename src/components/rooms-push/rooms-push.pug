@@ -39,11 +39,11 @@ section.rooms-push
                                         li.rooms-push__feature !{feature.title + " &mdash; " + feature.measure}
                                 +button('#', false)
         div.slider__controls
-            form.slider__dots
+            form.slider__dots.js-dots-rooms
                 - var i = 0
                 while i < countRoom
                     input.visually-hidden.slider__input(type="radio" id=i + "room" checked=i === 0 name="room")
                     label.slider__control(for=i + "room")
                     - i++
-            button.button.button--invert.slider__button.slider__button--prev
-            button.button.button--invert.slider__button.slider__button--next
+            button.button.button--invert.slider__button.slider__button--prev.js-button-prev-rooms
+            button.button.button--invert.slider__button.slider__button--next.js-button-next-rooms
